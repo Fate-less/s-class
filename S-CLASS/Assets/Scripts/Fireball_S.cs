@@ -1,23 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Fireball_S : MonoBehaviour
 {
-    public GameObject fireballObject;
-    public float fireballCooldown;
-    private float currentCooldown;
+    public float fireballSpeed;
+    public float damage;
+    public float graceDuration;
+    private Rigidbody rb;
 
     void Start()
     {
-        currentCooldown = fireballCooldown;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        currentCooldown -= Time.deltaTime;
-        if (Input.GetKeyDown(Keycode.E) && currentCooldown <= 0)
+        graceDuration -= Time.deltaTime;
+        if(graceDuration <= 0)
         {
-            currentCooldown = fireballCooldown;
-            Instantiate(fireballObject, transform.position, Quaternion.Euler(transform.rotation));
+            Destroy(gameObject);
         }
+    }
+
+    void FixedUpdate()
+    {
+        rb.velocity = Vector3.forward * fireballSpeed;
+    }
+
+   void OnTriggerEnter(Collider other)
+    {
+        /* kalo musu kena
+         * if(other.CompareTag("Enemy"){
+         * other.GetComponent<IDamageable>().TakeDamage(damage);
+         * Destroy(gameObject);
+         * }
+         * if(other.CompareTag("Wall){
+         * Destroy(gameObject);
+         * }
+        */
     }
 }
