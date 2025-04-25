@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump_S : MonoBehaviour
 {
     public float jumpForce;
     public bool isGrounded;

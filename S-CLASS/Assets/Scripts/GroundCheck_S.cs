@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundCheck : MonoBehaviour
+public class GroundCheck_S : MonoBehaviour
 {
     private void OnTriggerEnter(Collider ground)
     {

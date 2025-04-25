@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDash : Player
+public class PlayerDash_S : Player
 {
     public float dashDistance;
     public float dashCooldown;
