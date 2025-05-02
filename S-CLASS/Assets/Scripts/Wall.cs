@@ -5,9 +5,10 @@ using UnityEngine;
 public class Wall : MonoBehaviour, IDamageable
 {
     public float health {get;set;}
+    public float maxHealth;
     private void Start()
     {
-        health = 1f;
+        health = maxHealth;
     }
     void Update()
     {
