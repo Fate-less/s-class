@@ -1,6 +1,8 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
-public class ThirdPersonCamera_S : MonoBehaviour
+public class ThirdPersonCamera : MonoBehaviour
 {
     public float distance = 5f;
     public float height = 2f;

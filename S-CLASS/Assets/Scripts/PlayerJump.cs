@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerJump_S : MonoBehaviour
+public class PlayerJump : MonoBehaviour
 {
     public float jumpForce;
     public bool isGrounded;

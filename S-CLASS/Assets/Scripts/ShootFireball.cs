@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShootFireball_S : MonoBehaviour
+public class ShootFireball : MonoBehaviour
 {
     public GameObject fireballObject;
     public float fireballCooldown;
@@ -14,10 +14,10 @@ public class ShootFireball_S : MonoBehaviour
     void Update()
     {
         currentCooldown -= Time.deltaTime;
-        if (Input.GetKeyDown(Keycode.E) && currentCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.E) && currentCooldown <= 0)
         {
             currentCooldown = fireballCooldown;
-            Instantiate(fireballObject, transform.position, Quaternion.Euler(transform.rotation));
+            Instantiate(fireballObject, transform.position, transform.rotation);
         }
     }
 }

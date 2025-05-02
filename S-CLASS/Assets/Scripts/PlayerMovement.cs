@@ -1,6 +1,8 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
-public class PlayerMovement_S : Player
+public class PlayerMovement : Player
 {
     public float moveSpeed;
     private Camera cam;

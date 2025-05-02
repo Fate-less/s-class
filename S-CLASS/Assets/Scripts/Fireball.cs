@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball_S : MonoBehaviour
+public class Fireball : MonoBehaviour
 {
     public float fireballSpeed;
     public float damage;
@@ -25,19 +25,16 @@ public class Fireball_S : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector3.forward * fireballSpeed;
+        rb.velocity = new Vector3(fireballSpeed, rb.position.y, fireballSpeed);
     }
 
-   void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        /* kalo musu kena
-         * if(other.CompareTag("Enemy"){
-         * other.GetComponent<IDamageable>().TakeDamage(damage);
-         * Destroy(gameObject);
-         * }
-         * if(other.CompareTag("Wall){
-         * Destroy(gameObject);
-         * }
-        */
+        if (other.GetComponent<IDamageable>() == null)
+        {
+            return;
+        }
+        other.GetComponent<IDamageable>().TakeDamage(damage);
+        Destroy(gameObject);
     }
 }

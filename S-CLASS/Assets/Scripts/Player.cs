@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_S : MonoBehaviour
+public class Player : MonoBehaviour
 {
     void Start()
     {

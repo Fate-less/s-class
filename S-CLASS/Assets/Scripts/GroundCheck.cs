@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GroundCheck_S : MonoBehaviour
+public class GroundCheck : MonoBehaviour
 {
     private void OnTriggerEnter(Collider ground)
     {
